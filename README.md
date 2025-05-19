@@ -2,6 +2,16 @@
 
 .NET - Hetzner Cloud Api Client. [API Documentation](https://docs.hetzner.cloud)
 
+## Example
+
+```cs
+var apiToken = "";
+
+var httpClient = new HttpClient();
+var hetznerCloudClient = new HetznerCloudClient(httpClient, apiToken);
+
+var prices = await hetznerCloudClient.PricesQueryAsync();
+```
 
 ## Features
 
