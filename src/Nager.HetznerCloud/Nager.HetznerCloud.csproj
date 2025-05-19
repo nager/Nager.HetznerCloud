@@ -1,9 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <Authors>Tino Hager</Authors>
+    <Company>nager.at</Company>
+    <Description>Hetzner Cloud Client</Description>
+    
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    
     <ImplicitUsings>enable</ImplicitUsings>
+    
     <Nullable>enable</Nullable>
+    
+    <!--<PackageIcon>logo.png</PackageIcon>-->
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <!--<PackageReleaseNotes></PackageReleaseNotes>-->
+    <PackageProjectUrl>https://github.com/nager/Nager.HetznerCloud</PackageProjectUrl>
+    <PackageTags>Hetzner</PackageTags>
+    
+    <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+    
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
