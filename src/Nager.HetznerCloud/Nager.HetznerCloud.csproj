@@ -13,7 +13,7 @@
     
     <!--<PackageIcon>logo.png</PackageIcon>-->
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <!--<PackageReadmeFile>README.md</PackageReadmeFile>-->
     <!--<PackageReleaseNotes></PackageReleaseNotes>-->
     <PackageProjectUrl>https://github.com/nager/Nager.HetznerCloud</PackageProjectUrl>
     <PackageTags>Hetzner</PackageTags>
