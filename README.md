@@ -2,6 +2,20 @@
 
 .NET - Hetzner Cloud Api Client. [API Documentation](https://docs.hetzner.cloud)
 
+
+## Installation
+
+The package is available on [nuget](https://www.nuget.org/packages/Nager.HetznerCloud)
+```
+PM> install-package Nager.HetznerCloud
+```
+
+or
+
+```
+dotnet add package Nager.HetznerCloud
+```
+
 ## Example
 
 ```cs
