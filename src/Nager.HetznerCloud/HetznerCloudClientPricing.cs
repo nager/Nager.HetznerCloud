@@ -8,7 +8,7 @@ namespace Nager.HetznerCloud
         public async Task<PricingQueryResponse?> PricesQueryAsync(
             CancellationToken cancellationToken = default)
         {
-            var responseMessage = await this._httpClient.GetAsync("/v1/pricing", cancellationToken);
+            using var responseMessage = await this._httpClient.GetAsync("/v1/pricing", cancellationToken);
             this.CheckRateLimiting(responseMessage);
 
             if (!responseMessage.IsSuccessStatusCode)

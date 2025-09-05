@@ -20,7 +20,7 @@ namespace Nager.HetznerCloud
 
             var requestQuery = QueryStringHelper.BuildUrlWithQueryStringUsingStringConcat("/v1/firewalls", query);
 
-            var responseMessage = await this._httpClient.GetAsync(requestQuery, cancellationToken);
+            using var responseMessage = await this._httpClient.GetAsync(requestQuery, cancellationToken);
             this.CheckRateLimiting(responseMessage);
 
             if (!responseMessage.IsSuccessStatusCode)
@@ -39,7 +39,7 @@ namespace Nager.HetznerCloud
             FirewallCreateRequest createRequest,
             CancellationToken cancellationToken = default)
         {
-            var responseMessage = await this._httpClient.PostAsJsonAsync("/v1/firewalls", createRequest, this._jsonSerializerOptions, cancellationToken);
+            using var responseMessage = await this._httpClient.PostAsJsonAsync("/v1/firewalls", createRequest, this._jsonSerializerOptions, cancellationToken);
             this.CheckRateLimiting(responseMessage);
 
             if (!responseMessage.IsSuccessStatusCode)
@@ -58,7 +58,7 @@ namespace Nager.HetznerCloud
             long firewallId,
             CancellationToken cancellationToken = default)
         {
-            var responseMessage = await this._httpClient.DeleteAsync($"/v1/firewalls/{firewallId}", cancellationToken);
+            using var responseMessage = await this._httpClient.DeleteAsync($"/v1/firewalls/{firewallId}", cancellationToken);
             this.CheckRateLimiting(responseMessage);
 
             if (!responseMessage.IsSuccessStatusCode)

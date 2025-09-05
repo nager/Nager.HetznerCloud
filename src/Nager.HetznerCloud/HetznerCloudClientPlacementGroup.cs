@@ -19,7 +19,7 @@ namespace Nager.HetznerCloud
 
             var requestQuery = QueryStringHelper.BuildUrlWithQueryStringUsingStringConcat("/v1/placement_groups", query);
 
-            var responseMessage = await this._httpClient.GetAsync(requestQuery, cancellationToken);
+            using var responseMessage = await this._httpClient.GetAsync(requestQuery, cancellationToken);
             this.CheckRateLimiting(responseMessage);
 
             if (!responseMessage.IsSuccessStatusCode)

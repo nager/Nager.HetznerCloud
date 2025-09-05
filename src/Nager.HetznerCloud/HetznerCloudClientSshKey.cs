@@ -20,7 +20,7 @@ namespace Nager.HetznerCloud
 
             var requestQuery = QueryStringHelper.BuildUrlWithQueryStringUsingStringConcat("/v1/ssh_keys", query);
 
-            var responseMessage = await this._httpClient.GetAsync(requestQuery, cancellationToken);
+            using var responseMessage = await this._httpClient.GetAsync(requestQuery, cancellationToken);
             this.CheckRateLimiting(responseMessage);
 
             if (!responseMessage.IsSuccessStatusCode)
@@ -39,7 +39,7 @@ namespace Nager.HetznerCloud
             SshKeyCreateRequest createRequest,
             CancellationToken cancellationToken = default)
         {
-            var responseMessage = await this._httpClient.PostAsJsonAsync("/v1/ssh_keys", createRequest, this._jsonSerializerOptions, cancellationToken);
+            using var responseMessage = await this._httpClient.PostAsJsonAsync("/v1/ssh_keys", createRequest, this._jsonSerializerOptions, cancellationToken);
             this.CheckRateLimiting(responseMessage);
 
             if (!responseMessage.IsSuccessStatusCode)
@@ -58,7 +58,7 @@ namespace Nager.HetznerCloud
             long sshKeyId,
             CancellationToken cancellationToken = default)
         {
-            var responseMessage = await this._httpClient.DeleteAsync($"/v1/ssh_keys/{sshKeyId}", cancellationToken);
+            using var responseMessage = await this._httpClient.DeleteAsync($"/v1/ssh_keys/{sshKeyId}", cancellationToken);
             this.CheckRateLimiting(responseMessage);
 
             if (!responseMessage.IsSuccessStatusCode)

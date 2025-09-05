@@ -20,7 +20,7 @@ namespace Nager.HetznerCloud
 
             var requestQuery = QueryStringHelper.BuildUrlWithQueryStringUsingStringConcat("/v1/servers", query);
 
-            var responseMessage = await this._httpClient.GetAsync(requestQuery, cancellationToken);
+            using var responseMessage = await this._httpClient.GetAsync(requestQuery, cancellationToken);
             this.CheckRateLimiting(responseMessage);
 
             if (!responseMessage.IsSuccessStatusCode)
@@ -39,7 +39,7 @@ namespace Nager.HetznerCloud
             ServerCreateRequest createRequest,
             CancellationToken cancellationToken = default)
         {
-            var responseMessage = await this._httpClient.PostAsJsonAsync("/v1/servers", createRequest, this._jsonSerializerOptions, cancellationToken);
+            using var responseMessage = await this._httpClient.PostAsJsonAsync("/v1/servers", createRequest, this._jsonSerializerOptions, cancellationToken);
             this.CheckRateLimiting(responseMessage);
 
             if (!responseMessage.IsSuccessStatusCode)
@@ -58,7 +58,7 @@ namespace Nager.HetznerCloud
             long serverId,
             CancellationToken cancellationToken = default)
         {
-            var responseMessage = await this._httpClient.DeleteAsync($"/v1/servers/{serverId}", cancellationToken);
+            using var responseMessage = await this._httpClient.DeleteAsync($"/v1/servers/{serverId}", cancellationToken);
             this.CheckRateLimiting(responseMessage);
 
             if (!responseMessage.IsSuccessStatusCode)
