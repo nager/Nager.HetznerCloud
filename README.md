@@ -50,6 +50,6 @@ var prices = await hetznerCloudClient.PricesQueryAsync();
 | Pricing | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: |
 | Primary IPs | :x: | :x: | :x: | :x: | :x: | :x: |
 | Servers | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :x: |
-| Server Types | :heavy_minus_sign: | :x: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: |
+| Server Types | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: |
 | SSH Keys | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :x: |
 | Volumes | :x: | :x: | :x: | :x: | :x: | :x: |
