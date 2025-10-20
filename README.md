@@ -1,13 +1,15 @@
 # Nager.HetznerCloud
 
-.NET - Hetzner Cloud Api Client. [API Documentation](https://docs.hetzner.cloud)
+A modern **.NET API client** for the [Hetzner Cloud API](https://docs.hetzner.cloud).  
+This library provides a clean and easy-to-use interface to manage servers, networks, firewalls, and other Hetzner Cloud resources directly from your .NET applications.
 
 
-## Installation
+## 🚀 Installation
 
-The package is available on [nuget](https://www.nuget.org/packages/Nager.HetznerCloud)
-```
-PM> install-package Nager.HetznerCloud
+The package is available on [NuGet](https://www.nuget.org/packages/Nager.HetznerCloud).
+
+```ps
+PM> Install-Package Nager.HetznerCloud
 ```
 
 or
@@ -16,10 +18,10 @@ or
 dotnet add package Nager.HetznerCloud
 ```
 
-## Example
+## 💡 Example Usage
 
 ```cs
-var apiToken = "";
+var apiToken = "<your-api-token>";
 
 var httpClient = new HttpClient();
 var hetznerCloudClient = new HetznerCloudClient(httpClient, apiToken);
@@ -27,7 +29,7 @@ var hetznerCloudClient = new HetznerCloudClient(httpClient, apiToken);
 var prices = await hetznerCloudClient.PricesQueryAsync();
 ```
 
-## Features
+## ⚙️ Features Overview
 
 :heavy_check_mark: - Feature implemented\
 :x: - Feature not implemented\
