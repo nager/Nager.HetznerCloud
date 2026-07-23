@@ -18,9 +18,9 @@
     <PackageProjectUrl>https://github.com/nager/Nager.HetznerCloud</PackageProjectUrl>
     <PackageTags>Hetzner</PackageTags>
     
-    <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
     
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
   </PropertyGroup>
 
   <ItemGroup>

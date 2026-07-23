@@ -16,12 +16,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
-          dotnet-version: 9.0.x
+          dotnet-version: 10.0.x
 
       - name: Restore dependencies
         run: dotnet restore ./src
@@ -37,13 +37,16 @@ jobs:
     needs: build
     if: github.event_name != 'pull_request'
 
+    permissions:
+      id-token: write
+
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
-          dotnet-version: 9.0.x
+          dotnet-version: 10.0.x
 
       - name: Build and pack NuGet package
         run: |
@@ -51,9 +54,15 @@ jobs:
             --configuration Release \
             --output $GITHUB_WORKSPACE/out
 
+      - name: NuGet login
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{secrets.NUGET_USER}}
+
       - name: Push NuGet package
         run: |
           dotnet nuget push $GITHUB_WORKSPACE/out/*.nupkg \
             --source https://api.nuget.org/v3/index.json \
-            --api-key ${{ secrets.NUGET_TOKEN }} \
+            --api-key ${{steps.login.outputs.NUGET_API_KEY}} \
             --skip-duplicate
