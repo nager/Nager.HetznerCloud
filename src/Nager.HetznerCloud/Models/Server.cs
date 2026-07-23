@@ -9,7 +9,6 @@
         public PublicNet1 PublicNet { get; set; }
         public object[] PrivateNet { get; set; }
         public ServerType ServerType { get; set; }
-        public Datacenter Datacenter { get; set; }
         public Image? Image { get; set; }
         public object Iso { get; set; }
         public bool RescueEnabled { get; set; }
@@ -20,6 +19,7 @@
         public long IncludedTraffic { get; set; }
         public ServerProtection Protection { get; set; }
         //public Labels1 Labels { get; set; }
+        public Location Location { get; set; }
         public long[] Volumes { get; set; }
         public long[] LoadBalancers { get; set; }
         public int PrimaryDiskSize { get; set; }
