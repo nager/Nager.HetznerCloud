@@ -5,7 +5,6 @@ namespace Nager.HetznerCloud.Requests
     public class ServerCreateRequest
     {
         public bool Automount { get; set; }
-        public string Datacenter { get; set; }
         public FirewallServerMapping[] Firewalls { get; set; }
         public string Image { get; set; }
         public Labels Labels { get; set; }
