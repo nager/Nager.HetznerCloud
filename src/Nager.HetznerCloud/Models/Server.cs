@@ -18,7 +18,7 @@
         public long? IngoingTraffic { get; set; }
         public long IncludedTraffic { get; set; }
         public ServerProtection Protection { get; set; }
-        //public Labels1 Labels { get; set; }
+        public Dictionary<string,string> Labels { get; set; }
         public Location Location { get; set; }
         public long[] Volumes { get; set; }
         public long[] LoadBalancers { get; set; }
