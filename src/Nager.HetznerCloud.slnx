@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Nager.HetznerCloud.UnitTest/Nager.HetznerCloud.UnitTest.csproj" />
+  <Project Path="Nager.HetznerCloud/Nager.HetznerCloud.csproj" />
+</Solution>
