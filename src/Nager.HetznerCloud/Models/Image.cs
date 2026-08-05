@@ -8,7 +8,7 @@
         public string Architecture { get; set; }
         public string Type { get; set; }
         public string Status { get; set; }
-        public int? ImageSize { get; set; }
+        public float? ImageSize { get; set; }
         public int DiskSize { get; set; }
         public DateTime Created { get; set; }
         public object CreatedFrom { get; set; }
