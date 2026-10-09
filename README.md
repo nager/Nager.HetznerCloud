@@ -39,13 +39,12 @@ var prices = await hetznerCloudClient.PricesQueryAsync();
 |--|:--:|:--:|:--:|:--:|:--:|:--:|
 | General actions | ➖ | ⚪ | ➖ | ➖ | ➖ | ➖ |
 | Certificates | ⚪ | ⚪ | ⚪ | ⚪ | ➖ | ➖ |
-| Datacenters | ➖ | ✅ | ➖ | ➖ | ➖ | ➖ |
 | Firewalls | ✅ | ✅ | ⚪ | ✅ | ⚪ | ⚪ |
 | Floating IPs | ⚪ | ⚪ | ⚪ | ⚪ | ⚪ | ⚪ |
 | Images | ➖ | ⚪ | ⚪ | ⚪ | ⚪ | ⚪ |
 | ISOs | ➖ | ⚪ | ➖ | ➖ | ➖ | ➖ |
 | Load Balancers | ⚪ | ⚪ | ⚪ | ⚪ | ⚪ | ⚪ |
-| Locations | ➖ | ⚪ | ➖ | ➖ | ➖ | ➖ |
+| Locations | ➖ | ✅ | ➖ | ➖ | ➖ | ➖ |
 | Networks | ⚪ | ⚪ | ⚪ | ⚪ | ⚪ | ⚪ |
 | Placement Groups | ⚪ | ✅ | ⚪ | ⚪ | ⚪ | ⚪ |
 | Pricing | ➖ | ✅ | ➖ | ➖ | ➖ | ➖ |
