@@ -4,6 +4,14 @@
     public sealed class LogicTest
     {
         [TestMethod]
+        public async Task LocationsQueryAsync()
+        {
+            var client = new HetznerCloudClient(new HttpClient(), HetznerConfig.ApiKey);
+
+            var locations = await client.LocationsQueryAsync();
+        }
+
+        [TestMethod]
         public async Task ServersQueryAsync()
         {
             var client = new HetznerCloudClient(new HttpClient(), HetznerConfig.ApiKey);

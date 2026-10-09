@@ -6,7 +6,7 @@ namespace Nager.HetznerCloud
 {
     public partial class HetznerCloudClient
     {
-        public async Task<DatacenterQueryResponse?> DatacentersQueryAsync(
+        public async Task<LocationQueryResponse?> LocationsQueryAsync(
             int page = 1,
             int perPage = 25,
             CancellationToken cancellationToken = default)
@@ -17,7 +17,7 @@ namespace Nager.HetznerCloud
                 { "per_page", $"{perPage}" }
             };
 
-            var requestQuery = QueryStringHelper.BuildUrlWithQueryStringUsingStringConcat("/v1/datacenters", query);
+            var requestQuery = QueryStringHelper.BuildUrlWithQueryStringUsingStringConcat("/v1/locations", query);
 
             using var responseMessage = await this._httpClient.GetAsync(requestQuery, cancellationToken);
             this.CheckRateLimiting(responseMessage);
@@ -27,7 +27,7 @@ namespace Nager.HetznerCloud
                 return null;
             }
 
-            return await responseMessage.Content.ReadFromJsonAsync<DatacenterQueryResponse>(this._jsonSerializerOptions, cancellationToken);
+            return await responseMessage.Content.ReadFromJsonAsync<LocationQueryResponse>(this._jsonSerializerOptions, cancellationToken);
         }
     }
 }
